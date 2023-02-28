@@ -1,0 +1,18 @@
+# Ansible managed
+---
+version: "3.2"
+
+services:
+  ftiaxe:
+    build: 
+      context: ./
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 100m
+        max-file: "10"
+        compress: "true"
