@@ -1,4 +1,3 @@
 #!/bin/sh
 
-docker-compose build --pull --no-cache
-docker-compose push
+docker buildx build --platform linux/amd64,linux/arm64 -t travissouth/ftiaxe:latest --push .
